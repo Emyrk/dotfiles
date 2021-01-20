@@ -8,7 +8,7 @@
     ~/.bashrc: bashrc
     ~/.bash_profile: bash_profile
     ~/.bash_logout: bash_logout
-    ~/.gitconfig: gitconfig
+    # ~/.gitconfig: gitconfig
     ~/.ssh/config:
         path: ssh/config
         create: true
