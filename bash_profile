@@ -21,12 +21,10 @@ fi
 # Make utilities available
 
 PATH="$DOTFILES_DIR/bin:$PATH"
-echo $DOTFILES_DIR
 
 # Source the dotfiles (order matters)
 
 for DOTFILE in "$DOTFILES_DIR"/system/.{function,function_*,path,env,alias,grep,prompt,nvm,completion,fix,custom}; do
-    echo $DOTFILE
   [ -f "$DOTFILE" ] && . "$DOTFILE"
 done
 
