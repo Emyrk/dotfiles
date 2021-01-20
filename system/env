@@ -6,3 +6,6 @@ export M=$GOPATH/src/github.com/cdr/m
 export EM=$GOPATH/src/github.com/Emyrk
 export PATH=$PATH:$CDR/m/devbin
 export NAMESPACE=masley-dogfood
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
