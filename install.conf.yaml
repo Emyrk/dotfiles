@@ -1,13 +1,21 @@
 - clean: ['~']
 
+- create:
+    - ~/system
+
 - link:
     ~/.profile: profile
     ~/.bashrc: bashrc
+    ~/.bash_profile: bash_profile
     ~/.bash_logout: bash_logout
     ~/.gitconfig: gitconfig
     ~/.ssh/config:
         path: ssh/config
         create: true
-    ~/.vimrc: vimrc
+    ~/.vimrc: system/vimrc
+    ~/system/.prompt: system/prompt
+    ~/system/.env: system/env
+    ~/system/.alias: system/alias
+    ~/system/.nvm: system/nvm
 
 

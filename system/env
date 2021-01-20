@@ -1,0 +1,8 @@
+export GO111MODULE=on
+export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+export CDR=$GOPATH/src/github.com/cdr
+export M=$GOPATH/src/github.com/cdr/m
+export EM=$GOPATH/src/github.com/Emyrk
+export PATH=$PATH:$CDR/m/devbin
+export NAMESPACE=masley-dogfood
