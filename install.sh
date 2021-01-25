@@ -38,6 +38,11 @@ $run "$(script replace.sh)"
 # git configs
 $run "$(script git.sh)"
 
+# install packages
+$run "$(script pkg.sh)"
+
+# setup zsh
+$run "$(script zsh.sh)"
 
 #$run "$(script fail.sh)"
 

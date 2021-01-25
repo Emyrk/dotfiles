@@ -47,7 +47,7 @@ get_install_cmd() {
   local arch=$(arch_arg $1)
   case $arch in
     arch)
-      echo "pacman --no-confirm -S"
+      echo "pacman --no-confirm -Sy"
       ;;
 
     debian)
