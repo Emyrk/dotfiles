@@ -30,3 +30,8 @@ All the custom shell files should reside in `/system`.
                   symlinking the files to this dotfiles directory.
 ```
 
+
+# TODO:
+
+- Terminal profile export
+ - https://unix.stackexchange.com/questions/448811/how-to-export-a-gnome-terminal-profile
