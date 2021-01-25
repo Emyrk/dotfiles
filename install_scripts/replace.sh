@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# system_link.sh symlinks all the files in /system
+# replace.sh symlinks replaces all the files from /system/replace
 
 my_dir="$(dirname "$0")"
 # deplist
@@ -11,19 +11,26 @@ source "$my_dir"/colors.sh
 
 link_system_files() {
   # Echo lines before exec
-  local system="$DOTFILES_PATH"/system
-  # 'system/' is 7 chars
-  local sys_path="$HOME_SYSTEM_FILES"
-  mkdir -p "$sys_path/system"
+  local dot_repl_path="$DOTFILES_PATH"/system/replace
+  # 'replace/' is 7 chars
+  local repl_path="${HOME}"
+  local backup_path="$HOME/system/system_backup"
+  mkdir -p "$backup_path"
 
   # shellcheck disable=SC1073
-  for file in $(find system/system -mindepth 1);
+  for file in $(find system/replace -mindepth 1);
   do
-    local nf=${file:7}
-    echo "$nf"
+    # file is system/append/filename
+    local trimmed_name=${file:14}
+    local home_file="$HOME/${trimmed_name}"
+
     local new_loc="$sys_path"/$nf
     if [ -f "${DOTFILES_PATH}/${file}" ]; then
-      if [ -f "${new_loc}" ]; then
+      if [ -f "${home_file}" ]; then
+        # File exists, backup, and append the source
+        local backup="$backup_path/$trimmed_name"
+        echo -e "$(warning) $home_file already exists, backing up and removing "
+
         echo -e "$(warning) $new_loc already exists, cannot soft link from $DOTFILES_PATH"/"$file "
       else
         ( # Print out statements before exec
