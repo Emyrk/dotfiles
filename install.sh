@@ -51,5 +51,5 @@ $run "$(script zsh.sh)"
 
 #$run "$(script fail.sh)"
 
-sudo chsh -s /usr/bin/zsh
+sudo chsh $USER -s /usr/bin/zsh
 
