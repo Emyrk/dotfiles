@@ -1,15 +1,12 @@
 #!/usr/bin/env bash
 # append.sh symlinks all the files in /system/append
 # and appends text to $HOME/file
-my_dir=$(realpath "$DOTFILES_PATH/$(dirname "$0")")
 
 # deplist
 # shellcheck source=src/utilities/arch.sh
-source "$my_dir"/arch.sh
-# shellcheck source=src/utilities/colors.sh
-source "$my_dir"/colors.sh
+source "${DOTFILES_PATH}"/install_scripts/utilities/arch.sh
 # shellcheck source=src/utilities/append.sh
-source "$my_dir"/append.sh
+source "${DOTFILES_PATH}"/install_scripts/utilities/append.sh
 # /deplist
 
 append_system_files() {

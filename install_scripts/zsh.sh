@@ -1,13 +1,5 @@
 #!/usr/bin/env bash
 # zsh.sh sets up zsh
-my_dir=$(realpath "$DOTFILES_PATH/$(dirname "$0")")
-
-# deplist
-# shellcheck source=src/utilities/arch.sh
-source "$my_dir"/arch.sh
-# shellcheck source=src/utilities/colors.sh
-source "$my_dir"/colors.sh
-# /deplist
 
 # p10k theme
 if [ ! -d "$HOME/.zsh/powerlevel10k" ]

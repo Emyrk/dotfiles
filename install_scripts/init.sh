@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 # init.sh installs some basic utilities to facilitate this install.
-my_dir=$(realpath "$DOTFILES_PATH/$(dirname "$0")")
 
 # deplist
 # shellcheck source=src/utilities/arch.sh
-source "$my_dir"/arch.sh
+source "${DOTFILES_PATH}"/install_scripts/utilities/arch.sh
 # /deplist
 
 

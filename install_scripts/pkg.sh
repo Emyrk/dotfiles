@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 # pkg.sh installs packages to use!.
-my_dir=$(realpath "$DOTFILES_PATH/$(dirname "$0")")
 
 # deplist
 # shellcheck source=src/utilities/arch.sh
-source "$my_dir"/arch.sh
+source "${DOTFILES_PATH}"/install_scripts/utilities/arch.sh
 # shellcheck source=src/utilities/colors.sh
-source "$my_dir"/colors.sh
+source "${DOTFILES_PATH}"/install_scripts/utilities/colors.sh
 # /deplist
 
 
