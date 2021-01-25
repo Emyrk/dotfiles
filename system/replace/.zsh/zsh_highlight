@@ -1,0 +1,6 @@
+# https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters.md
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+typeset -A ZSH_HIGHLIGHT_STYLES
+
+# Default is all text not covered by the highligher
+ZSH_HIGHLIGHT_STYLES[default]='fg=015'
