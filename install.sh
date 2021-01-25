@@ -1,15 +1,43 @@
 #!/usr/bin/env bash
+# install.sh is run once when a new environment is configured
+
+my_dir="$(dirname "$0")"
+# deplist
+# shellcheck source=src/utilities/arch.sh
+source "$my_dir"/install_scripts/utilities/arch.sh
+# shellcheck source=src/utilities/colors.sh
+source "$my_dir"/install_scripts/utilities/colors.sh
+# /deplist
 
 set -e
 
-CONFIG="install.conf.yaml"
-DOTBOT_DIR="dotbot"
+# Export the dotfiles path
+export DOTFILES_PATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+export HOME_SYSTEM_FILES=$HOME/system
 
-DOTBOT_BIN="bin/dotbot"
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+run="./${my_dir}/install_scripts/utilities/run_script.sh"
+script() {
+  echo "./${my_dir}/install_scripts/${1}"
+}
 
-cd "${BASEDIR}"
-git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
-git submodule update --init --recursive "${DOTBOT_DIR}"
+########## START #########
+echo -e "$(info) Installing on OS: '$(get_arch)'"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+# Init's pkg manager
+# $run "$(script init.sh)"
+
+# Symlinks
+$run "$(script system_link.sh)"
+
+# appends
+$run "$(script append.sh)"
+
+# replaces
+$run "$(script replace.sh)"
+
+# git configs
+$run "$(script git.sh)"
+
+
+#$run "$(script fail.sh)"
+
