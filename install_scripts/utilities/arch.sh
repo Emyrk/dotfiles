@@ -21,7 +21,7 @@ pkg_mgmnt_update() {
   local arch=$(arch_arg $1)
   case $arch in
     arch)
-      echo "pacman --no-confirm -Syyu"
+      echo "pacman --noconfirm -Syyu"
       ;;
 
     debian)
@@ -47,7 +47,7 @@ get_install_cmd() {
   local arch=$(arch_arg $1)
   case $arch in
     arch)
-      echo "pacman --no-confirm -Sy"
+      echo "pacman --noconfirm -Sy"
       ;;
 
     debian)
