@@ -15,3 +15,7 @@ bash_profile run once, bashrc every new terminal
 git clone git@github.com:Emyrk/dotfiles.git ~/dotfiles
 ~/dotfiles/install.sh
 ```
+
+# TODO: 
+
+- Add common scripts in /scripts and make it apart of path

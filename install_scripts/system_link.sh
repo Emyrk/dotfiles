@@ -20,7 +20,6 @@ link_system_files() {
   for file in $(find system/system -mindepth 1);
   do
     local nf=${file:7}
-    echo "$nf"
     local new_loc="$sys_path"/$nf
     if [ -f "${DOTFILES_PATH}/${file}" ]; then
       if [ -f "${new_loc}" ]; then
