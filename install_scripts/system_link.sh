@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # system_link.sh symlinks all the files in /system
+my_dir=$(realpath "$DOTFILES_PATH/$(dirname "$0")")
 
-my_dir="$(dirname "$0")"
 # deplist
 # shellcheck source=src/utilities/arch.sh
 source "$my_dir"/arch.sh

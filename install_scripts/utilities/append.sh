@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # append.sh can append text in a block that can be removed
-my_dir="$(dirname "$0")"
+my_dir=$(realpath "$DOTFILES_PATH/$(dirname "$0")")
+
 # deplist
 # shellcheck source=src/utilities/colors.sh
 source "$my_dir"/colors.sh

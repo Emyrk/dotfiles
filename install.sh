@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # install.sh is run once when a new environment is configured
-
 my_dir="$(dirname "$0")"
+
+
 # deplist
 # shellcheck source=src/utilities/arch.sh
 source "$my_dir"/install_scripts/utilities/arch.sh
@@ -23,8 +24,11 @@ script() {
 ########## START #########
 echo -e "$(info) Installing on OS: '$(get_arch)'"
 
+echo $DOTFILES_PATH
+#$run "$(script fail.sh)"
+
 # Init's pkg manager
-# $run "$(script init.sh)"
+$run "$(script init.sh)"
 
 # Symlinks
 $run "$(script system_link.sh)"
