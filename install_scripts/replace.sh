@@ -40,6 +40,7 @@ replace_system_files() {
         echo -e "$(warning) $home_file already exists, this will be removed "
         if [ ! -f "$backup" ]; then
           echo -e $(info) "backing up file $trimmed_name to $backup"
+          mkdir -p "$backup"
           cp "$home_file" "$backup"
         fi
         rm "$home_file"
