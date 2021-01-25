@@ -20,8 +20,13 @@ then
   git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 fi
 
-
 if [ ! -d "$HOME/.zsh/zsh-syntax-highlighting" ]
 then
   git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
+fi
+
+if [ ! -d "$HOME/.zsh/autojump" ]
+then
+  git clone --depth=1 https://github.com/wting/autojump.git ~/.zsh/autojump
+  ~/.zsh/autojump/install.py
 fi

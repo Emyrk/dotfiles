@@ -15,7 +15,6 @@ pkgs=(
   "zsh"
   "curl"
   "autojump"
-  "zsh-syntax-highlighting"
 )
 
 

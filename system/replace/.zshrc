@@ -38,7 +38,8 @@ bindkey "^[[1;5D" backward-word
 # Load Plugins; should be last.
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-source /usr/share/autojump/autojump.zsh 2>/dev/null
+# source /usr/share/autojump/autojump.zsh 2>/dev/null
+[[ -s /home/steven/.autojump/etc/profile.d/autojump.sh ]] && source /home/steven/.autojump/etc/profile.d/autojump.sh
 source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 

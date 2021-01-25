@@ -95,7 +95,7 @@
   typeset -g POWERLEVEL9K_VIRTUALENV_{LEFT,RIGHT}_DELIMITER=
 
   # Blue current directory.
-  typeset -g POWERLEVEL9K_DIR_FOREGROUND=$blue
+  typeset -g POWERLEVEL9K_DIR_FOREGROUND=$yellow
 
   # Context format when root: user@host. The first part white, the rest grey.
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE="%F{$white}%n%f%F{$grey}@%m%f"
@@ -114,7 +114,7 @@
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=$yellow
 
   # Grey Git prompt. This makes stale prompts indistinguishable from up-to-date ones.
-  typeset -g POWERLEVEL9K_VCS_FOREGROUND=$grey
+  typeset -g POWERLEVEL9K_VCS_FOREGROUND=$white
 
   # Disable async loading indicator to make directories that aren't Git repositories
   # indistinguishable from large Git repositories without known state.
@@ -143,7 +143,7 @@
   # Don't show the number of commits next to the ahead/behind arrows.
   typeset -g POWERLEVEL9K_VCS_{COMMITS_AHEAD,COMMITS_BEHIND}_MAX_NUM=1
   # Remove space between '⇣' and '⇡' and all trailing spaces.
-  typeset -g POWERLEVEL9K_VCS_CONTENT_EXPANSION='${${${P9K_CONTENT/⇣* :⇡/⇣⇡}// }//:/ }'
+  typeset -g POWERLEVEL9K_VCS_CONTENT_EXPANSION='(${${${P9K_CONTENT/⇣* :⇡/⇣⇡}// }//:/ })'
 
   # Grey current time.
   typeset -g POWERLEVEL9K_TIME_FOREGROUND=$grey
@@ -174,6 +174,18 @@
   #              zsh initialization. Choose this if you've never tried instant prompt, haven't
   #              seen the warning, or if you are unsure what this all means.
   typeset -g POWERLEVEL9K_INSTANT_PROMPT=verbose
+
+
+  #############[ kubecontext: current kubernetes context (https://kubernetes.io/) ]#############
+  # Show kubecontext only when the the command you are typing invokes one of these tools.
+  # Tip: Remove the next line to always show kubecontext.
+  typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm|kubens|kubectx|oc|istioctl|kogito|k9s|helmfile'
+  
+
+  # Emyrk extra custom
+
+
+  # End Emyrk extra custom
 
   # Hot reload allows you to change POWERLEVEL9K options after Powerlevel10k has been initialized.
   # For example, you can type POWERLEVEL9K_BACKGROUND=red and see your prompt turn red. Hot reload
