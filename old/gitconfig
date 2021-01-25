@@ -1,7 +1,0 @@
-[user]
-	name = Emyrk
-	email = stevenmasley@gmail.com
-[url "git@github.com:"]
-	insteadOf = https://github.com/
-[core]
-	editor = vim

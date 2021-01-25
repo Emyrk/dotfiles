@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# system_link.sh symlinks all the files in /system
+# append.sh symlinks all the files in /system/append
+# and appends text to $HOME/file
 
 my_dir="$(dirname "$0")"
 # deplist
@@ -60,4 +61,3 @@ append_system_files() {
 }
 
 append_system_files
-append_to_file filename test1 test2

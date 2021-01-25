@@ -23,6 +23,7 @@ link_system_files() {
     # file is system/append/filename
     local trimmed_name=${file:14}
     local home_file="$HOME/${trimmed_name}"
+    local ln_file="$dot_repl_path/$trimmed_name"
 
     local new_loc="$sys_path"/$nf
     if [ -f "${DOTFILES_PATH}/${file}" ]; then
@@ -30,18 +31,20 @@ link_system_files() {
         # File exists, backup, and append the source
         local backup="$backup_path/$trimmed_name"
         echo -e "$(warning) $home_file already exists, backing up and removing "
-
-        echo -e "$(warning) $new_loc already exists, cannot soft link from $DOTFILES_PATH"/"$file "
-      else
-        ( # Print out statements before exec
-          set -x
-          ln -sv "$DOTFILES_PATH"/"$file" "$new_loc"
-        )
+        if [ ! -f "$backup" ]; then
+          echo -e $(info) "backing up file $trimmed_name to $backup"
+          cp "$home_file" "$backup"
+          rm "$home_file"
+        fi
       fi
+      ( # Print out statements before exec
+        set -x
+        ln -sv "$ln_file" "$home_file"
+      )
     else
       ( # Print out statements before exec
         set -x
-        mkdir -p "$HOME/$nf"
+        mkdir -p "$home_file"
       )
     fi
   done

@@ -32,6 +32,12 @@ $run "$(script system_link.sh)"
 # appends
 $run "$(script append.sh)"
 
+# replaces
+$run "$(script replace.sh)"
 
-$run "$(script fail.sh)"
+# git configs
+$run "$(script git.sh)"
+
+
+#$run "$(script fail.sh)"
 
