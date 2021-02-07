@@ -14,3 +14,5 @@ alias h='history'
 alias vim='vim'
 alias vi='vim'
 alias grep='grep --color'
+
+alias antlr='java -jar $HOME/applications/antlrv4/antlr-4.9.1-complete.jar'
