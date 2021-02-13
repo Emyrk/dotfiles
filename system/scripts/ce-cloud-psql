@@ -1,0 +1,1 @@
+sudo cloud_sql_proxy -instances=coder-dogfood:us-central1:master=tcp:5432

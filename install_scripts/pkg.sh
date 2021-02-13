@@ -25,4 +25,12 @@ for pkg in "${pkgs[@]}"; do
 done
 
 
+# Some manual binaries
+# cloud_proxy :: https://cloud.google.com/sql/docs/postgres/quickstart-proxy-test#linux-64-bit
+if [ ! -f "/usr/local/bin/cloud_sql_proxy" ]; then
+  wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O /tmp/cloud_sql_proxy
+  chmod +x /tmp/cloud_sql_proxy
+  sudo mv /tmp/cloud_sql_proxy /usr/local/bin/cloud_sql_proxy
+fi
+
 
