@@ -15,4 +15,4 @@ alias vim='vim'
 alias vi='vim'
 alias grep='grep --color'
 
-alias antlr='java -jar $HOME/applications/antlrv4/antlr-4.9.1-complete.jar'
+alias antlr='java -jar /usr/local/lib/antlr-4.9.2-complete.jar'
