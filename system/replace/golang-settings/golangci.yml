@@ -1,0 +1,41 @@
+# See https://golangci-lint.run/usage/configuration/
+# Over time we should try tightening some of these.
+linters-settings:
+  goconst:
+    min-len: 4         # Min length of string consts (def 3).
+    min-occurrences: 3 # Min number of const occurrences (def 3).
+  gocognit:
+    min-complexity: 46 # Min code complexity (def 30).
+  nestif:
+    min-complexity: 10 # Min complexity of if statements (def 5, goal 4)
+issues:
+  exclude:
+    - "G204" # Subprocess launch is frequently a false positive.
+  exclude-rules:
+    - path: cloud # Don't want to mess with Jon's code right now.
+      linters:
+        - errcheck
+        - deadcode
+        - unused
+
+    - path: link # Don't want to mess with Jon's code right now.
+      linters:
+        - errcheck
+        - deadcode
+        - unused
+
+    - path: _test\.go
+      linters:
+        - gosec
+        - errcheck
+
+    - path: product/coder/pkg/database
+      linters:
+        # The database package has a lot of safe string concatenation. They
+        # should be replaced at some point, but it's not urgent.
+        - gosec
+run:
+  skip-dirs:
+    - coder.com
+    - ui
+    - node_modules
