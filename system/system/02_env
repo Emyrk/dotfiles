@@ -9,3 +9,4 @@ export NAMESPACE=masley-dogfood
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
+export NODE_OPTIONS=--max-old-space-size=8192
