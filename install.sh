@@ -6,6 +6,13 @@ export HOME_SYSTEM_FILES=$HOME/system
 
 echo -e "Running install from '${my_dir}'"
 
+# Ensure we have GitHub's host key, because all clones are over SSH (enforced by
+# /etc/gitconfig)
+if ! ssh-keygen -F github.com > /dev/null; then
+  ssh-keyscan github.com >> ~/.ssh/known_hosts 2> /dev/null
+fi
+
+
 # deplist
 # shellcheck source=src/utilities/arch.sh
 source "${DOTFILES_PATH}"/install_scripts/utilities/arch.sh
