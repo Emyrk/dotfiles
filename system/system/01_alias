@@ -1,2 +1,2 @@
 alias vi=vim
-alias kubectl=k
+alias k=kubectl
