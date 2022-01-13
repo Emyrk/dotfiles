@@ -1,0 +1,4 @@
+docker run --name coder --rm -it -p 7080:7080 -p 5434:5433 \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v ~/.coder:/var/run/coder \
+    codercom/coder:1.25.1
