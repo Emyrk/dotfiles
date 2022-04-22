@@ -25,6 +25,9 @@ for pkg in "${pkgs[@]}"; do
 done
 
 
+# Ignore any error
+sudo update-alternatives --install /usr/local/bin/gofmt gofmt /usr/local/goboring/bin/gofmt 100 || true
+
 # Some manual binaries
 # cloud_proxy :: https://cloud.google.com/sql/docs/postgres/quickstart-proxy-test#linux-64-bit
 if [ ! -f "/usr/local/bin/cloud_sql_proxy" ]; then
