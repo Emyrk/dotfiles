@@ -37,7 +37,8 @@ if [ ! -f "/usr/local/bin/cloud_sql_proxy" ]; then
 fi
 
 if [ ! -f "/usr/local/bin/kubecolor" ]; then
-  wget https://github.com/hidetatz/kubecolor/releases/download/v0.0.20/kubecolor_0.0.20_Linux_x86_64.tar.gz -O /tmp/kubecolor
+  wget https://github.com/hidetatz/kubecolor/releases/download/v0.0.20/kubecolor_0.0.20_Linux_x86_64.tar.gz -O /tmp/kubecolor.tar.gz
+  tar -C /tmp -zxvf /tmp/kubecolor.tar.gz kubecolor
   chmod +x /tmp/kubecolor
   sudo mv /tmp/kubecolor /usr/local/bin/kubecolor
 fi
