@@ -15,4 +15,6 @@ alias vim='vim'
 alias vi='vim'
 alias grep='grep --color'
 
+alias kubectl="kubecolor"
+
 alias antlr='java -jar /usr/local/lib/antlr-4.9.2-complete.jar'
