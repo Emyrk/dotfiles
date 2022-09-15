@@ -12,6 +12,9 @@ if ! ssh-keygen -F github.com > /dev/null; then
   ssh-keyscan github.com >> ~/.ssh/known_hosts 2> /dev/null
 fi
 
+# Solve 23F3D4EA75716059 key issue
+sudo apt-key del C99B11DEB97541F0 && sudo rm /etc/apt/sources.list.d/github-cli.list
+
 
 # deplist
 # shellcheck source=src/utilities/arch.sh
