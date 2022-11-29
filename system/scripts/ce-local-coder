@@ -1,0 +1,19 @@
+
+name=coder-db
+[[ $(docker ps -f "name=$name" --format '{{.Names}}') == $name ]] || docker run --name $name \
+    -e POSTGRES_PASSWORD=41NbaOOqO4In \
+    -e PGDATA=/var/lib/postgresql/data/pgdata \
+    -v $PWD/postgres_data:/var/lib/postgresql/data \
+    -p 5432:5432 \
+    -d postgres
+
+
+DB_HOST=127.0.0.1 \
+DB_USER=postgres \
+DB_NAME=postgres \
+DB_PASSWORD="41NbaOOqO4In" \
+DB_PORT=5432 \
+BUILT_IN_ENVPROXY_TOKEN="" \
+DB_SSL_MODE=disable \
+HUMAN_LOG=$PWD/logs \
+coderd  --verbose run --bind 0.0.0.0:8080 --binds 0.0.0.0:8089 

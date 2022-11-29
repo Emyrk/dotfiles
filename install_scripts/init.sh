@@ -9,6 +9,9 @@ source "${DOTFILES_PATH}"/install_scripts/utilities/arch.sh
 
 echo "Initializing the system's package manager and dev tools"
 
+# Remove broken repo list
+sudo rm /etc/apt/sources.list.d/kubic.list
+
 # Update the pkg manager
 echo "> $(pkg_mgmnt_update)"
 sudo $(pkg_mgmnt_update)
