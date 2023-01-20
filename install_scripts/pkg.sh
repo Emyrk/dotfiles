@@ -13,7 +13,8 @@ source "${DOTFILES_PATH}"/install_scripts/utilities/colors.sh
 pkgs=(
   "zsh"
   "curl"
-  "python"
+  "python2"
+  "python3"
 )
 
 

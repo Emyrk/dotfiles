@@ -24,11 +24,7 @@ pkg_mgmnt_update() {
       echo "pacman --noconfirm -Syyu"
       ;;
 
-    debian)
-      echo "apt-get update -y"
-      ;;
-    
-    "ubuntu debian")
+    debian | "ubuntu debian")
       echo "apt-get update -y"
       ;;
   esac
@@ -41,7 +37,7 @@ make_pkg() {
       echo "base-devel"
       ;;
 
-    debian)
+    debian | "ubuntu debian")
       echo "build-essential"
       ;;
   esac
@@ -54,7 +50,7 @@ get_install_cmd() {
       echo "pacman --noconfirm -Sy"
       ;;
 
-    debian)
+    debian | "ubuntu debian")
       echo "apt-get install -y"
       ;;
   esac
