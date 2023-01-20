@@ -13,7 +13,7 @@ if ! ssh-keygen -F github.com > /dev/null; then
 fi
 
 # Solve 23F3D4EA75716059 key issue
-sudo apt-key del C99B11DEB97541F0 && sudo rm /etc/apt/sources.list.d/github-cli.list
+sudo apt-key del C99B11DEB97541F0 && sudo rm -f /etc/apt/sources.list.d/github-cli.list
 
 
 # deplist
