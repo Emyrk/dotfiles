@@ -27,6 +27,10 @@ pkg_mgmnt_update() {
     debian)
       echo "apt-get update -y"
       ;;
+    
+    "ubuntu debian")
+      echo "apt-get update -y"
+      ;;
   esac
 }
 
