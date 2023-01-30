@@ -17,6 +17,14 @@ pkgs=(
   "python3"
 )
 
+if [ ! -f "/usr/bin/syncthing"]; then
+  # TODO: only if deb
+  sudo curl -o /usr/share/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
+  echo "deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
+  echo "deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing candidate" | sudo tee /etc/apt/sources.list.d/syncthing.list
+  sudo apt-get update
+  sudo apt-get install syncthing
+fi
 
 # TODO: Probably install all in 1 cmd?
 echo -e "$(info) Installing packages"
