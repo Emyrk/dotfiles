@@ -63,3 +63,5 @@ if [ -f '/home/steven/google-cloud-sdk/path.zsh.inc' ]; then . '/home/steven/goo
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/steven/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/steven/google-cloud-sdk/completion.zsh.inc'; fi
+
+if [ -e /home/steven/.nix-profile/etc/profile.d/nix.sh ]; then . /home/steven/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
