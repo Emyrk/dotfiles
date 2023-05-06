@@ -72,4 +72,6 @@ export PATH="$FLYCTL_INSTALL/bin:$PATH"
 # Install if missing
 if [ ! -e $HOME/.fly ]; curl -L https://fly.io/install.sh | sh
 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 
