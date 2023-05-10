@@ -70,7 +70,7 @@ if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . /home/steven/.nix-prof
 export FLYCTL_INSTALL="/home/steven/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
 # Install if missing
-if [ -e $HOME/.fly ]; curl -L https://fly.io/install.sh | sh
+if [ -e $HOME/.fly ]; then curl -L https://fly.io/install.sh | sh; fi
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
