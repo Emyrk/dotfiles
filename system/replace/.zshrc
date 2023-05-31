@@ -59,19 +59,17 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 autoload -U compinit; compinit
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f $HOME'/google-cloud-sdk/path.zsh.inc' ]; then . '/home/steven/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f $HOME'/google-cloud-sdk/path.zsh.inc' ]; then . '~/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f $HOME'/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/steven/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f $HOME'/google-cloud-sdk/completion.zsh.inc' ]; then . '~/google-cloud-sdk/completion.zsh.inc'; fi
 
-if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . /home/steven/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 # Fly
-export FLYCTL_INSTALL="/home/steven/.fly"
+export FLYCTL_INSTALL="~/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
 # Install if missing
 if [ ! -e $HOME/.fly ]; then curl -L https://fly.io/install.sh | sh; fi
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
