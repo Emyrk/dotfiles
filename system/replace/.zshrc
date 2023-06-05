@@ -67,7 +67,7 @@ if [ -f $HOME'/google-cloud-sdk/completion.zsh.inc' ]; then . '~/google-cloud-sd
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 # Fly
-export FLYCTL_INSTALL="~/.fly"
+export FLYCTL_INSTALL="$HOME/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
 # Install if missing
 if [ ! -e $HOME/.fly ]; then curl -L https://fly.io/install.sh | sh; fi
