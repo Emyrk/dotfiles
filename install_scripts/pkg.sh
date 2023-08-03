@@ -8,7 +8,6 @@ source "${DOTFILES_PATH}"/install_scripts/utilities/arch.sh
 source "${DOTFILES_PATH}"/install_scripts/utilities/colors.sh
 # /deplist
 
-
 # packages to install
 pkgs=(
   "zsh"
@@ -33,7 +32,6 @@ for pkg in "${pkgs[@]}"; do
   sudo $(get_install_cmd) $pkg
 done
 
-
 # Ignore any error
 sudo update-alternatives --install /usr/local/bin/gofmt gofmt /usr/local/goboring/bin/gofmt 100 || true
 
@@ -50,4 +48,8 @@ if [ ! -f "/usr/local/bin/kubecolor" ]; then
   tar -C /tmp -zxvf /tmp/kubecolor.tar.gz kubecolor
   chmod +x /tmp/kubecolor
   sudo mv /tmp/kubecolor /usr/local/bin/kubecolor
+fi
+
+if [ ! -f "$HOME/.local/share/pnpm/pnpm" ]; then
+  curl -fsSL https://get.pnpm.io/install.sh | sh -
 fi

@@ -73,3 +73,9 @@ export PATH="$FLYCTL_INSTALL/bin:$PATH"
 if [ ! -e $HOME/.fly ]; then curl -L https://fly.io/install.sh | sh; fi
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PNPM_HOME="/home/steven/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
