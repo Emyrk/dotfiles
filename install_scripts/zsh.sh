@@ -20,5 +20,5 @@ fi
 if [ ! -d "$HOME/.zsh/autojump" ]
 then
   git clone --depth=1 https://github.com/wting/autojump.git ~/.zsh/autojump
-  python ~/.zsh/autojump/install.py
+  python3 ~/.zsh/autojump/install.py
 fi
